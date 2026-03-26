@@ -1,6 +1,6 @@
 [package]
 name = "whattheprecommit"
-version = "0.1.0"
+version = "0.0.2"
 edition = "2024"
 
 [dependencies]
@@ -9,5 +9,5 @@ serde = { version = "1.0.228", features = ["derive"] }
 ureq = { version = "3.3.0", features = ["json"] }
 
 [[bin]]
-name = "whattheprecommit"
+name = "wtc"
 path = "src/main.rs"
