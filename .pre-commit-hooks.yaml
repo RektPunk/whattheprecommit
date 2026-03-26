@@ -1,6 +1,6 @@
 - id: whattheprecommit
   name: Randomize Commit Message
   description: Replaces your commit message with something divine or alien.
-  entry: whattheprecommit
+  entry: wtpc
   language: rust
   stages: [prepare-commit-msg]
