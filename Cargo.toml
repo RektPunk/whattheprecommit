@@ -9,5 +9,5 @@ serde = { version = "1.0.228", features = ["derive"] }
 ureq = { version = "3.3.0", features = ["json"] }
 
 [[bin]]
-name = "wtpc"
+name = "wtc"
 path = "src/main.rs"
