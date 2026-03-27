@@ -1,17 +1,8 @@
 use rand::prelude::IndexedRandom;
-use serde::Deserialize;
 use std::process::{Command, exit};
-use std::time::Duration;
 use std::{env, fs};
-use ureq::Agent;
 
 const DEFAULT_JOKES: &str = include_str!("jokes.txt");
-
-#[derive(Deserialize)]
-struct CommitResponse {
-    #[serde(rename = "commit_message")]
-    message: String,
-}
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -50,17 +41,12 @@ fn generate_message() -> String {
 }
 
 fn fetch_api_msg() -> Result<String, Box<dyn std::error::Error>> {
-    let config = Agent::config_builder()
-        .timeout_global(Some(Duration::from_secs(1)))
-        .build();
-    let agent: Agent = config.into();
-    let body = agent
-        .get("https://whatthecommit.com/index.json")
-        .call()?
-        .body_mut()
-        .read_json::<CommitResponse>()?;
-
-    Ok(body.message)
+    let msg = minreq::get("https://whatthecommit.com/index.txt")
+        .with_timeout(1)
+        .send()?
+        .as_str()?
+        .to_string();
+    Ok(msg)
 }
 
 fn fetch_local_backup() -> Option<String> {
