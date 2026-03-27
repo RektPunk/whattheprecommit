@@ -8,7 +8,7 @@ fn main() {
     let commit_msg = generate_message();
     if let Some(path) = commit_msg_path {
         if let Err(e) = fs::write(path, &commit_msg) {
-            eprintln!("Failed to write commit message: {e}");
+            eprintln!("Failed to write commit message: {}", e);
             exit(1);
         }
     } else {
@@ -26,7 +26,7 @@ fn main() {
                 exit(1);
             }
             Err(e) => {
-                eprintln!("Failed to execute 'git': {e}");
+                eprintln!("Failed to execute 'git': {}", e);
                 exit(1);
             }
         }
