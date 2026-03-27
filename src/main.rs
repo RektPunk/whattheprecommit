@@ -12,15 +12,23 @@ fn main() {
             exit(1);
         }
     } else {
-        let success = Command::new("git")
+        match Command::new("git")
             .args(["commit", "-m", &commit_msg])
             .status()
-            .map(|s| s.success())
-            .unwrap_or(false);
-
-        if !success {
-            eprintln!("Git commit failed. Make sure you have staged changes.");
-            exit(1);
+        {
+            Ok(status) if status.success() => (),
+            Ok(status) => {
+                eprintln!(
+                    "Git commit failed with exit code: {}",
+                    status.code().unwrap_or(1)
+                );
+                eprintln!("Tip: Are there any staged changes? (git add .)");
+                exit(1);
+            }
+            Err(e) => {
+                eprintln!("Failed to execute 'git': {e}");
+                exit(1);
+            }
         }
     }
 }
@@ -32,8 +40,6 @@ fn generate_message() -> String {
         }
     }
     fetch_local_backup()
-        .map(|s| s.to_string())
-        .unwrap_or_else(|| "I have no idea what I'm doing.".to_string())
 }
 
 fn fetch_api_msg() -> Result<String, Box<dyn std::error::Error>> {
@@ -46,7 +52,7 @@ fn fetch_api_msg() -> Result<String, Box<dyn std::error::Error>> {
     Ok(msg)
 }
 
-fn fetch_local_backup() -> Option<&'static str> {
+fn fetch_local_backup() -> String {
     let mut chosen = None;
     let mut count = 0;
 
@@ -57,4 +63,6 @@ fn fetch_local_backup() -> Option<&'static str> {
         }
     }
     chosen
+        .unwrap_or("I have no idea what I'm doing.")
+        .to_string()
 }
