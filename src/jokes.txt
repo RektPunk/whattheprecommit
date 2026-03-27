@@ -58,3 +58,13 @@ Closing my eyes and pushing to main.
 This code is a love letter to technical debt.
 I don’t know why this works, and at this point, I’m too afraid to ask.
 Fixed the bug. I think. Probably. Maybe not.
+Logic is for people who don't have faith.
+YOLO: Merging to production.
+I'm 99% sure this will break 100% of the site.
+Just shaking the jar and seeing what crawls out.
+It compiled. My job here is done.
+I'll fix this in the next life.
+Senior dev told me to do this. I'm just a puppet.
+This commit is a social experiment.
+Deleting code until the errors stop.
+I am not a programmer. I am a professional copy-paster.
