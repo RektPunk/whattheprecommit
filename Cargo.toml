@@ -1,12 +1,11 @@
 [package]
 name = "whattheprecommit"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2024"
 
 [dependencies]
+minreq = { version = "2.14.1", features = ["https"] }
 rand = "0.10.0"
-serde = { version = "1.0.228", features = ["derive"] }
-ureq = { version = "3.3.0", features = ["json"] }
 
 [[bin]]
 name = "wtc"
