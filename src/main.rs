@@ -47,10 +47,14 @@ fn fetch_api_msg() -> Result<String, Box<dyn std::error::Error>> {
 }
 
 fn fetch_local_backup() -> Option<&'static str> {
-    let count = DEFAULT_JOKES.lines().filter(|l| !l.is_empty()).count();
-    if count == 0 {
-        return None;
+    let mut chosen = None;
+    let mut count = 0;
+
+    for line in DEFAULT_JOKES.lines().filter(|l| !l.is_empty()) {
+        count += 1;
+        if fastrand::usize(..count) == 0 {
+            chosen = Some(line);
+        }
     }
-    let index = fastrand::usize(..count);
-    DEFAULT_JOKES.lines().filter(|l| !l.is_empty()).nth(index)
+    chosen
 }
