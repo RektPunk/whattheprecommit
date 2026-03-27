@@ -53,7 +53,7 @@ May God have mercy on the person who reviews this.
 If this works, it's a miracle.
 Everything looks fine.
 Changed 'false' to 'true'. Let's see what happens.
-I'm 100% sure this won't explode.
+I'm 70% sure this won't explode.
 Closing my eyes and pushing to main.
 This code is a love letter to technical debt.
 I don’t know why this works, and at this point, I’m too afraid to ask.

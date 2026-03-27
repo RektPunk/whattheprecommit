@@ -26,7 +26,7 @@ fn main() {
 }
 
 fn generate_message() -> String {
-    if fastrand::f32() < 0.5 {
+    if fastrand::f32() < 0.0 {
         if let Ok(msg) = fetch_api_msg() {
             return msg;
         }

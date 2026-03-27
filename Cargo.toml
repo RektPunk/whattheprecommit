@@ -5,7 +5,7 @@ edition = "2024"
 
 [dependencies]
 fastrand = "2.3.0"
-minreq = { version = "2.14.1", features = ["https"] }
+minreq = { version = "2.14.1", features = ["https-native"] }
 
 [[bin]]
 name = "wtc"
