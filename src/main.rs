@@ -1,34 +1,25 @@
 use std::process::{Command, exit};
-use std::{env, fs};
 
 const DEFAULT_JOKES: &str = include_str!("jokes.txt");
 
 fn main() {
-    let commit_msg_path = env::args().nth(1);
     let commit_msg = generate_message();
-    if let Some(path) = commit_msg_path {
-        if let Err(e) = fs::write(path, &commit_msg) {
-            eprintln!("Failed to write commit message: {}", e);
+    match Command::new("git")
+        .args(["commit", "-m", &commit_msg])
+        .status()
+    {
+        Ok(status) if status.success() => (),
+        Ok(status) => {
+            eprintln!(
+                "Git commit failed with exit code: {}",
+                status.code().unwrap_or(1)
+            );
+            eprintln!("Tip: Are there any staged changes? (git add .)");
             exit(1);
         }
-    } else {
-        match Command::new("git")
-            .args(["commit", "-m", &commit_msg])
-            .status()
-        {
-            Ok(status) if status.success() => (),
-            Ok(status) => {
-                eprintln!(
-                    "Git commit failed with exit code: {}",
-                    status.code().unwrap_or(1)
-                );
-                eprintln!("Tip: Are there any staged changes? (git add .)");
-                exit(1);
-            }
-            Err(e) => {
-                eprintln!("Failed to execute 'git': {}", e);
-                exit(1);
-            }
+        Err(e) => {
+            eprintln!("Failed to execute 'git': {}", e);
+            exit(1);
         }
     }
 }

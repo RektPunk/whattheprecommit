@@ -1,6 +1,6 @@
 - id: whattheprecommit
   name: Commit Roulette
   description: Ensures no one in your repo ever writes a professional commit message again.
-  entry: wtc
-  language: rust
+  entry: ./roulette.sh
+  language: script
   stages: [prepare-commit-msg]
