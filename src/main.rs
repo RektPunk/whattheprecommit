@@ -25,11 +25,12 @@ fn main() {
 }
 
 fn generate_message() -> String {
-    if fastrand::f32() < 0.5 {
-        if let Ok(msg) = fetch_api_msg() {
-            return msg;
-        }
+    if fastrand::f32() < 0.5
+        && let Ok(msg) = fetch_api_msg()
+    {
+        return msg;
     }
+
     fetch_local_backup()
 }
 
@@ -45,11 +46,8 @@ fn fetch_api_msg() -> Result<String, Box<dyn std::error::Error>> {
 
 fn fetch_local_backup() -> String {
     let mut chosen = None;
-    let mut count = 0;
-
-    for line in DEFAULT_JOKES.lines().filter(|l| !l.is_empty()) {
-        count += 1;
-        if fastrand::usize(..count) == 0 {
+    for (count, line) in DEFAULT_JOKES.lines().filter(|l| !l.is_empty()).enumerate() {
+        if fastrand::usize(..(count + 1)) == 0 {
             chosen = Some(line);
         }
     }
