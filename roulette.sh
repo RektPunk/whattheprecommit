@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 COMMIT_MSG_FILE=$1
-GIT_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || echo ".")
-JOKES_FILE="$GIT_ROOT/src/jokes.txt"
+JOKES_FILE="$(dirname "$0")/src/jokes.txt"
 
 if [ $((RANDOM % 2)) -eq 0 ]; then
     API_MSG=$(curl -s --max-time 2 https://whatthecommit.com/index.txt | tr -d '\r\n')
