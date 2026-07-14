@@ -10,14 +10,18 @@ static SEED_COUNTER: AtomicU64 = AtomicU64::new(0);
 fn main() {
     let commit_msg = generate_message();
     match Command::new("git")
-        .args(["commit", "--allow-empty", "-m", &commit_msg])
+        .args(["commit", "-m", &commit_msg])
         .output()
     {
         Ok(output) if output.status.success() => (),
         Ok(output) => {
+            let stdout = String::from_utf8_lossy(&output.stdout);
             let stderr = String::from_utf8_lossy(&output.stderr);
-            if !stderr.trim().is_empty() {
-                eprintln!("{}", stderr.trim());
+            if !stdout.is_empty() {
+                eprintln!("{stdout}");
+            }
+            if !stderr.is_empty() {
+                eprintln!("{stderr}");
             }
             exit(1);
         }
@@ -35,7 +39,14 @@ fn generate_message() -> String {
     }
 }
 
-fn run_command_checked(mut cmd: Command) -> IoResult<Output> {
+fn fetch_api_output() -> IoResult<Output> {
+    let mut cmd = Command::new("curl");
+    cmd.args([
+        "-s",
+        "--max-time",
+        "2",
+        "https://whatthecommit.com/index.txt",
+    ]);
     let output = cmd.output()?;
     if output.status.success() {
         Ok(output)
@@ -44,45 +55,9 @@ fn run_command_checked(mut cmd: Command) -> IoResult<Output> {
     }
 }
 
-fn fetch_curl() -> IoResult<Output> {
-    let mut cmd = Command::new("curl");
-    cmd.args([
-        "-s",
-        "--max-time",
-        "1",
-        "https://whatthecommit.com/index.txt",
-    ]);
-    run_command_checked(cmd)
-}
-
-#[cfg(target_os = "windows")]
-fn fetch_api_output() -> IoResult<Output> {
-    fetch_curl().or_else(|_| {
-        let mut cmd = Command::new("powershell");
-        cmd.args([
-            "-NoProfile",
-            "-NonInteractive",
-            "-Command",
-            "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; \
-             [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; \
-             (Invoke-WebRequest -Uri 'https://whatthecommit.com/index.txt' -TimeoutSec 1 -UseBasicParsing).Content",
-        ]);
-        run_command_checked(cmd)
-    })
-}
-
-#[cfg(not(target_os = "windows"))]
-fn fetch_api_output() -> IoResult<Output> {
-    fetch_curl().or_else(|_| {
-        let mut cmd = Command::new("wget");
-        cmd.args(["-qO-", "--timeout=1", "https://whatthecommit.com/index.txt"]);
-        run_command_checked(cmd)
-    })
-}
-
 fn fetch_api_msg() -> Result<String, Box<dyn Error>> {
     let output = fetch_api_output()?;
-    let msg = String::from_utf8(output.stdout)?;
+    let msg = String::from_utf8_lossy(&output.stdout);
     let trimmed = msg.trim();
     if !trimmed.is_empty() {
         return Ok(trimmed.to_string());
@@ -94,7 +69,6 @@ fn fetch_api_msg() -> Result<String, Box<dyn Error>> {
 fn fetch_local_backup() -> String {
     let mut chosen = None;
     let mut count = 0;
-
     for line in DEFAULT_JOKES.lines().filter_map(|l| {
         let l = l.trim();
         (!l.is_empty()).then_some(l)
@@ -114,12 +88,10 @@ fn fast_random(max: usize) -> usize {
     if max <= 1 {
         return 0;
     }
-
     let time_sn = SystemTime::now()
         .duration_since(UNIX_EPOCH)
         .unwrap_or_default()
         .as_nanos() as u64;
-
     let counter = SEED_COUNTER.fetch_add(1, Ordering::Relaxed);
     let mut seed = time_sn ^ counter;
     seed = seed
