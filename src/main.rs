@@ -1,14 +1,12 @@
-use std::error::Error;
-use std::io::{Error as IoError, Result as IoResult};
-use std::process::{Command, Output, exit};
+use std::process::{Command, exit};
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::{SystemTime, UNIX_EPOCH};
 
-const DEFAULT_JOKES: &str = include_str!("jokes.txt");
+const JOKES: &str = include_str!("jokes.txt");
 static SEED_COUNTER: AtomicU64 = AtomicU64::new(0);
 
 fn main() {
-    let commit_msg = generate_message();
+    let commit_msg = get_random_message();
     match Command::new("git")
         .args(["commit", "-m", &commit_msg])
         .output()
@@ -26,52 +24,19 @@ fn main() {
             exit(1);
         }
         Err(e) => {
-            eprintln!("Failed to execute 'git': {}", e);
+            eprintln!("Failed to execute 'git': {e}");
             exit(1);
         }
     }
 }
 
-fn generate_message() -> String {
-    match fast_random(2) {
-        0 => fetch_api_msg().unwrap_or_else(|_| fetch_local_backup()),
-        _ => fetch_local_backup(),
-    }
-}
-
-fn fetch_api_output() -> IoResult<Output> {
-    let mut cmd = Command::new("curl");
-    cmd.args([
-        "-s",
-        "--max-time",
-        "2",
-        "https://whatthecommit.com/index.txt",
-    ]);
-    let output = cmd.output()?;
-    if output.status.success() {
-        Ok(output)
-    } else {
-        Err(IoError::other("Command returned non-zero status"))
-    }
-}
-
-fn fetch_api_msg() -> Result<String, Box<dyn Error>> {
-    let output = fetch_api_output()?;
-    let msg = String::from_utf8_lossy(&output.stdout);
-    let trimmed = msg.trim();
-    if !trimmed.is_empty() {
-        return Ok(trimmed.to_string());
-    }
-
-    Err("API fetch failed".into())
-}
-
-fn fetch_local_backup() -> String {
+fn get_random_message() -> String {
     let mut chosen = None;
     let mut count = 0;
-    for line in DEFAULT_JOKES.lines().filter_map(|l| {
-        let l = l.trim();
-        (!l.is_empty()).then_some(l)
+
+    for line in JOKES.lines().filter_map(|line| {
+        let line = line.trim();
+        (!line.is_empty()).then_some(line)
     }) {
         count += 1;
         if fast_random(count) == 0 {
@@ -81,22 +46,73 @@ fn fetch_local_backup() -> String {
 
     chosen
         .unwrap_or("I have no idea what I'm doing.")
-        .to_string()
+        .to_owned()
 }
 
 fn fast_random(max: usize) -> usize {
     if max <= 1 {
         return 0;
     }
-    let time_sn = SystemTime::now()
+
+    let time_ns = SystemTime::now()
         .duration_since(UNIX_EPOCH)
         .unwrap_or_default()
         .as_nanos() as u64;
     let counter = SEED_COUNTER.fetch_add(1, Ordering::Relaxed);
-    let mut seed = time_sn ^ counter;
+    let mut seed = time_ns ^ counter;
+
     seed = seed
         .wrapping_mul(6364136223846793005)
         .wrapping_add(1442695040888963407);
 
     (seed as usize) % max
+}
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn random_value_is_zero_for_max_zero_or_one() {
+        assert_eq!(fast_random(0), 0);
+        assert_eq!(fast_random(1), 0);
+    }
+
+    #[test]
+    fn random_value_is_within_range() {
+        for max in 2..100 {
+            let value = fast_random(max);
+            assert!(value < max);
+        }
+    }
+
+    #[test]
+    fn random_message_is_not_empty() {
+        let message = get_random_message();
+        assert!(!message.is_empty());
+    }
+
+    #[test]
+    fn random_message_is_one_of_the_jokes() {
+        let message = get_random_message();
+        assert!(
+            JOKES
+                .lines()
+                .map(str::trim)
+                .any(|line| !line.is_empty() && line == message)
+        );
+    }
+
+    #[test]
+    fn random_message_is_trimmed() {
+        let message = get_random_message();
+        assert_eq!(message, message.trim());
+    }
+
+    #[test]
+    fn jokes_contains_non_empty_messages() {
+        assert!(
+            JOKES.lines().any(|line| !line.trim().is_empty()),
+            "jokes.txt must contain at least one non-empty message"
+        );
+    }
 }

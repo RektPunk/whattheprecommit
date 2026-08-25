@@ -1,70 +1,201 @@
-I have no idea what I'm doing.
-This code was written by a caffeinated squirrel.
-This bug was intentional.
-It works. Don't touch.
-The voices told me to.
-I am the algorithm.
-Trust me, I'm an engineer (not).
-Refactored everything into a single line of code.
-If this breaks, it's not my fault. It's the compiler.
+Abandon all hope, ye who enter here.
+add dirty scripts from the dark side of the universe
+Added a banner to the default admin page.
 Added more bugs for job security.
-I didn't write this; the Universe did.
-Standard human brains may not comprehend these changes.
-The AI made me do it.
-I let a LLM write this commit. Blame the tokens.
-Don't worry, I tested this on my machine and it worked once.
-I've automated my own job. This commit is my digital ghost.
-Refactored the technical debt into a technical bankruptcy.
-If you're reading this, the 'git revert' button is your only friend.
+AI did it, I'm innocent. I just pressed Enter.
+AI said it would work. I believed it.
+AI suggested it. I lacked the courage to say no.
+AI wrote it. Don't look at me.
+AI wrote this. I only provided the electricity.
+And a commit that I don't know the reason of...
+And if thou'rt unwilling, then force I'll employ
+And if you ask me how I'm feeling
+Argh! About to give up :(
+Become a programmer, they said. It'll be fun, they said.
 Behold, the spaghetti king.
-It’s not a bug, it’s an undocumented feature.
-Moved the bug to a different file. Problem solved.
-Don't ask how this works. I don't know either.
-Fixed the bug by deleting the feature.
-Refactored for performance. Now it’s fast and wrong.
-I’m not responsible for this commit.
-This commit is a cry for help.
+Changed 'false' to 'true'. Let's see what happens.
+clarify further the brokenness of C++. why the fuck are we using C++?
+Closing my eyes and pushing to main.
+Code was clean until manager requested to fuck it up
+Compiler said no, so I said yes.
+Copilot said it was safe. What could go wrong?
+Copilot wrote this. I'm just the commit author.
+copy and paste is not a design pattern
+Copy-paste to fix previous copy-paste
+Crap. Tonight is raid night and I am already late.
+Definitely fixing a mistake Copilot made. Totally not mine.
 Deleted 1,000 lines of code. It still works. I’m going home.
+Deleting code until the errors stop.
+Does anyone read this? I'll be at the coffee shop accross the street.
+Don't ask how this works. I don't know either.
+Don't Ask Me, I Have No Idea Why This Works Either
+Don't worry, I tested this on my machine and it worked once.
+Don’t even try to refactor it.
+Don’t mess with Voodoo
+download half the damn internet to parse a pdf
+Either Hot Shit or Total Bollocks
+Everything looks fine.
+Fix all errors, all errors on the WORLD!!!!
 Fixed a bug. Introduced several more for balance.
-I have no memory of writing this.
-If this fails, blame past me.
+fixed conflicts (LOL merge -s ours; push -f)
+Fixed the bug by deleting the feature.
+Fixed the bug. I think. Probably. Maybe not.
+fixed the israeli-palestinian conflict
+Fixed the thing that broke the other thing.
+Fixed. Don’t ask.
+For real, this time.
+Friday 5pm
 Future me is going to hate this.
+Future self, please forgive me and don't hit me with the baseball bat again!
+Git wants me to commit, I want to sleep. Take me sweet void.
+Give me a break, it's 2am. But it works now.
+Glue. Match sticks. Paper. Build script!
+Hiding API key hahaha
+How is the target directory over 100 gigs?
+Human involvement was limited to pressing Enter.
+I already said I was sorry
+I am not a programmer. I am a professional copy-paster.
+I am sorry
+I am the algorithm.
+I am the greatest javascript developer in the world.
+I asked AI for help. This is what happened.
+I asked AI to refactor it. Now nobody knows how it works.
+I asked Copilot to fix it. It fixed my career instead.
+I blindly accepted every Copilot suggestion.
+I cannot believe that it took this long to write a test for this.
+I didn't write this; the Universe did.
+I don't get paid enough for this shit.
+I don't give a damn 'bout my reputation
+I don't know what the hell I was thinking.
+I don't know what these changes are supposed to accomplish but somebody told me to make them.
+I don't know why. Just move on.
+I don’t know why this works, and at this point, I’m too afraid to ask.
+I gave an LLM access to the codebase. What could go wrong?
+I hate this fucking language.
+I have no idea what Copilot was doing there.
+I have no idea what I'm doing.
+I have no memory of writing this.
+i hid an easter egg in the code. can you find it?
+I immediately regret this commit.
+I just evaluated random code in my console
+I just wanna tell you how I'm feeling
+I know what I am doing. Trust me.
+I know, I know, this is not how I’m supposed to do it, but I can't think of something better.
+I let a LLM write this commit. Blame the tokens.
+I must have been drunk.
+I outsourced my judgment to an LLM.
+I regret nothing. Actually, I regret this.
+I think this is what they meant.
+I transformed a bug into a feature. Once you learn how, you'll never forget it
+I trusted the AI. That was my first mistake.
+I was told to leave it alone, but I have this thing called OCD, you see
+I'll fix this in the next life.
+I'm sure this won't explode.
+I've automated my own job. This commit is my digital ghost.
+If it doesn’t work, I was never here.
+If it works, don’t read it.
+If this breaks, blame the AI.
+If this breaks, it's not my fault. It's the compiler.
+If this fails, blame past me.
+If this fails, it was the AI.
+If this works, it's a miracle.
+If you're reading this, the 'git revert' button is your only friend.
+Increased performance by decreasing correctness.
+It compiled. My job here is done.
+It Compiles! 50 Points For Gryffindor.
+It only compiles every 2.5 tries... good luck.
+It works on my computer
+It works. Don't touch.
+It works. The AI said so.
+It works. Why? No.
+It'd be nice if type errors caused the compiler to issue a type error
+It's possible! you can turn a 50-line code chunk into just 3 lines. Here's how
+It’s not a bug, it’s an artistic choice.
+It’s not a bug, it’s an undocumented feature.
+I’m just clicking buttons at this point.
+I’m not responsible for this commit.
+Just committing so I can go home
+Just shaking the jar and seeing what crawls out.
+just shoot me
+Last time I said it works? I was kidding
+Logic is for people who don't have faith.
+magic, have no clue but it works
+Make Sure You Are Square With Your God Before Trying To Merge This
+May God have mercy on the person who reviews this.
+Moved something to somewhere... goodnight...
+Moved the bug to a different file. Problem solved.
+My bad
+My boss forced me to build this feature... Pure shit.
+Never Run This Commit As Root
+Next time someone asks you how to fix an infinite loop, remember this commit
+No time to commit.. My people need me!
+Nobody had ever created a function like this one before.
+Not one conflict, today was a good day.
+Not sure why
+Nothing to see here, move along
+Now added delete for real
+Oh my god what year is it?!
+Ok, 5am, it works.  For real.
+One day I'll actually start looking at what Copilot generates instead of just immediately pushing it.
+Optimized for readability. Became unreadable.
+Out for vacation... DONT YOU DARE TO CALL ME.
+Passed all tests (I deleted the failing ones).
+Please our Lord and Savior the Great Linter.
+pr is failing but merging anyways, because I am an admin
+project lead is allergic to changes...
+Proof that autocomplete should not have write access.
+Push poorly written test can down the road another ten years
+put code that worked where the code that didn't used to be
+Refactored everything into a single line of code.
+Refactored for performance. Now it’s fast and wrong.
+Refactored into something worse but cleaner.
+Refactored the technical debt into a technical bankruptcy.
 Refactored vibes, not code.
 Removed code. Not sure what it did, but nothing broke yet.
-I regret nothing. Actually, I regret this.
-Fixed the thing that broke the other thing.
-Increased performance by decreasing correctness.
-TODO: figure out what this does
-TODO: remove this TODO
-Compiler said no, so I said yes.
-I think this is what they meant.
-Refactored into something worse but cleaner.
-If it works, don’t read it.
-If it doesn’t work, I was never here.
-Wrote code. Not sure what language anymore.
-Passed all tests (I deleted the failing ones).
-Optimized for readability. Became unreadable.
-This commit should not exist, yet here we are.
-It works. Why? No.
-Fixed. Don’t ask.
-It’s not a bug, it’s an artistic choice.
-I’m just clicking buttons at this point.
-May God have mercy on the person who reviews this.
-If this works, it's a miracle.
-Everything looks fine.
-Changed 'false' to 'true'. Let's see what happens.
-I'm 70% sure this won't explode.
-Closing my eyes and pushing to main.
-This code is a love letter to technical debt.
-I don’t know why this works, and at this point, I’m too afraid to ask.
-Fixed the bug. I think. Probably. Maybe not.
-Logic is for people who don't have faith.
-YOLO: Merging to production.
-I'm 99% sure this will break 100% of the site.
-Just shaking the jar and seeing what crawls out.
-It compiled. My job here is done.
-I'll fix this in the next life.
+removed tests since i can't make them green
 Senior dev told me to do this. I'm just a puppet.
+should work I guess...
+So my boss wanted this button ...
+somebody keeps erasing my changes.
+someday I gonna kill someone for this shit...
+Standard human brains may not comprehend these changes.
+Still can't get this right...
+Thank god for Copilot
+The AI made me do it.
+The AI told me to commit this.
+The dog is eating my code
+The last time I tried this the monkey didn't survive. Let's hope it works better this time.
+The robots told me it was ready.
+The voices told me to.
+Things went wrong...
+This bug has driven lots of coders completely mad. You won't believe how it ended up being fixed
+This bug was intentional.
+This changes nothing, don't look
+This code is a love letter to technical debt.
+This code was written by a caffeinated squirrel.
+This commit is a cry for help.
 This commit is a social experiment.
-Deleting code until the errors stop.
-I am not a programmer. I am a professional copy-paster.
+This commit should not exist, yet here we are.
+This is why git rebase is a horrible horrible thing.
+This is why the cat shouldn't sit on my keyboard.
+This Is Why We Don't Push To Production On Fridays
+This was the most stupid bug in the world, fixed in the smartest way ever
+To be honest, I do not quite remember everything I changed here today.
+To those I leave behind, good luck!
+Trust me, I'm an engineer.
+Trust me, it's not badly written. It's just way above your head.
+Update .env
+Update .gitignore
+We'll figure it out on Monday
+Who has two thumbs and remembers the rudiments of his linear algebra courses? Apparently, this guy.
+Who Let the Bugs Out??
+WHO THE FUCK CAME UP WITH MAKE?
+why is everything broken
+Why The Fuck?
+workaround for ant being a pile of fail
+Wrote code. Not sure what language anymore.
+WTF is this.
+YOLO: Merging to production.
+You can't see it, but I'm making a very angry face right now
+You should have trusted me.
+Your commit is writing checks your merge can't cash.
