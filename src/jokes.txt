@@ -2,6 +2,11 @@ Abandon all hope, ye who enter here.
 add dirty scripts from the dark side of the universe
 Added a banner to the default admin page.
 Added more bugs for job security.
+AI did it, I'm innocent. I just pressed Enter.
+AI said it would work. I believed it.
+AI suggested it. I lacked the courage to say no.
+AI wrote it. Don't look at me.
+AI wrote this. I only provided the electricity.
 And a commit that I don't know the reason of...
 And if thou'rt unwilling, then force I'll employ
 And if you ask me how I'm feeling
@@ -13,6 +18,8 @@ clarify further the brokenness of C++. why the fuck are we using C++?
 Closing my eyes and pushing to main.
 Code was clean until manager requested to fuck it up
 Compiler said no, so I said yes.
+Copilot said it was safe. What could go wrong?
+Copilot wrote this. I'm just the commit author.
 copy and paste is not a design pattern
 Copy-paste to fix previous copy-paste
 Crap. Tonight is raid night and I am already late.
@@ -45,11 +52,16 @@ Give me a break, it's 2am. But it works now.
 Glue. Match sticks. Paper. Build script!
 Hiding API key hahaha
 How is the target directory over 100 gigs?
+Human involvement was limited to pressing Enter.
 I already said I was sorry
 I am not a programmer. I am a professional copy-paster.
 I am sorry
 I am the algorithm.
 I am the greatest javascript developer in the world.
+I asked AI for help. This is what happened.
+I asked AI to refactor it. Now nobody knows how it works.
+I asked Copilot to fix it. It fixed my career instead.
+I blindly accepted every Copilot suggestion.
 I cannot believe that it took this long to write a test for this.
 I didn't write this; the Universe did.
 I don't get paid enough for this shit.
@@ -58,6 +70,7 @@ I don't know what the hell I was thinking.
 I don't know what these changes are supposed to accomplish but somebody told me to make them.
 I don't know why. Just move on.
 I don’t know why this works, and at this point, I’m too afraid to ask.
+I gave an LLM access to the codebase. What could go wrong?
 I hate this fucking language.
 I have no idea what Copilot was doing there.
 I have no idea what I'm doing.
@@ -70,17 +83,21 @@ I know what I am doing. Trust me.
 I know, I know, this is not how I’m supposed to do it, but I can't think of something better.
 I let a LLM write this commit. Blame the tokens.
 I must have been drunk.
+I outsourced my judgment to an LLM.
 I regret nothing. Actually, I regret this.
 I think this is what they meant.
 I transformed a bug into a feature. Once you learn how, you'll never forget it
+I trusted the AI. That was my first mistake.
 I was told to leave it alone, but I have this thing called OCD, you see
 I'll fix this in the next life.
 I'm sure this won't explode.
 I've automated my own job. This commit is my digital ghost.
 If it doesn’t work, I was never here.
 If it works, don’t read it.
+If this breaks, blame the AI.
 If this breaks, it's not my fault. It's the compiler.
 If this fails, blame past me.
+If this fails, it was the AI.
 If this works, it's a miracle.
 If you're reading this, the 'git revert' button is your only friend.
 Increased performance by decreasing correctness.
@@ -89,6 +106,7 @@ It Compiles! 50 Points For Gryffindor.
 It only compiles every 2.5 tries... good luck.
 It works on my computer
 It works. Don't touch.
+It works. The AI said so.
 It works. Why? No.
 It'd be nice if type errors caused the compiler to issue a type error
 It's possible! you can turn a 50-line code chunk into just 3 lines. Here's how
@@ -124,6 +142,8 @@ Out for vacation... DONT YOU DARE TO CALL ME.
 Passed all tests (I deleted the failing ones).
 Please our Lord and Savior the Great Linter.
 pr is failing but merging anyways, because I am an admin
+project lead is allergic to changes...
+Proof that autocomplete should not have write access.
 Push poorly written test can down the road another ten years
 put code that worked where the code that didn't used to be
 Refactored everything into a single line of code.
@@ -142,8 +162,10 @@ Standard human brains may not comprehend these changes.
 Still can't get this right...
 Thank god for Copilot
 The AI made me do it.
+The AI told me to commit this.
 The dog is eating my code
 The last time I tried this the monkey didn't survive. Let's hope it works better this time.
+The robots told me it was ready.
 The voices told me to.
 Things went wrong...
 This bug has driven lots of coders completely mad. You won't believe how it ended up being fixed

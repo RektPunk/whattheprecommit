@@ -2,7 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=transparent&height=300&color=gradient&text=whattheprecommit&section=subheader&reversal=false&height=120&fontSize=60&fontColor=ff5500">
 </div>
 
-Automatically ruins git commit messages with whatthecommit API. My final contribution to the team.
+Automatically makes your git history worse. My final contribution to the team.
 
 ## Installation
 
@@ -29,3 +29,7 @@ cargo install --git https://github.com/RektPunk/whattheprecommit
 ```
 
 Just type `wtc` instead of `git commit -m "..."`. It's like Russian Roulette for your Git history.
+
+### Sources
+
+Some of the commit messages were borrowed from [ngerakines/commitment](https://github.com/ngerakines/commitment).
