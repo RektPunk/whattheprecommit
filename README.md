@@ -2,7 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=transparent&height=300&color=gradient&text=whattheprecommit&section=subheader&reversal=false&height=120&fontSize=60&fontColor=ff5500">
 </div>
 
-Automatically makes your git history worse. My final contribution to the team.
+Automatically makes your Git history worse. My final contribution to the team.
 
 ## Installation
 
