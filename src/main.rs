@@ -67,6 +67,7 @@ fn fast_random(max: usize) -> usize {
 
     (seed as usize) % max
 }
+
 #[cfg(test)]
 mod tests {
     use super::*;

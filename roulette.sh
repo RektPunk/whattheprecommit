@@ -4,7 +4,11 @@ COMMIT_MSG_FILE=$1
 JOKES_FILE="$(dirname "$0")/src/jokes.txt"
 
 if [ -f "$JOKES_FILE" ]; then
-    mapfile -t JOKES < <(grep -v '^[[:space:]]*$' "$JOKES_FILE")
+    JOKES=()
+
+    while IFS= read -r line; do
+        JOKES+=("$line")
+    done < <(grep -v '^[[:space:]]*$' "$JOKES_FILE")
 
     if [ "${#JOKES[@]}" -gt 0 ]; then
         RANDOM_INDEX=$((RANDOM % ${#JOKES[@]}))
