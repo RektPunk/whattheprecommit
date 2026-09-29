@@ -15,7 +15,7 @@ default_install_hook_types: [pre-commit, prepare-commit-msg]
 
 repos:
   - repo: https://github.com/RektPunk/whattheprecommit
-    rev: v0.0.9
+    rev: v0.0.10
     hooks:
       - id: whattheprecommit
 ```
